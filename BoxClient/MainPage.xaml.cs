@@ -26,5 +26,10 @@ namespace BoxClient
         {
             this.InitializeComponent();
         }
+
+        private void Click_Me_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
