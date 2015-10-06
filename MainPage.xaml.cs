@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,10 +26,21 @@ namespace BoxClient
         public MainPage()
         {
             this.InitializeComponent();
+#if DEBUG
+            textBox.Text = "BoxTest";
+#endif
         }
 
-        private void Click_Me_Click(object sender, RoutedEventArgs e)
+        private async void Click_Me_Click(object sender, RoutedEventArgs e)
         {
+            string szRequest; 
+            szRequest = "Https://box.zjuqsc.com/item/get/";
+            szRequest += textBox.Text ;
+            textBlock.Text = "Sending request...Please wait";
+
+#if DEBUG
+            textBlock.Text = szRequest;
+#endif
 
         }
     }
