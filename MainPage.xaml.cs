@@ -1,4 +1,7 @@
-﻿using System;
+﻿//DEBUG symbol is not defined in the Property,define it below if it should be used
+#define DEBUG
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,6 +16,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Web.Http;
+
 
 //“空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 上有介绍
 
@@ -33,15 +38,23 @@ namespace BoxClient
 
         private async void Click_Me_Click(object sender, RoutedEventArgs e)
         {
-            string szRequest; 
+            string szRequest;
             szRequest = "Https://box.zjuqsc.com/item/get/";
-            szRequest += textBox.Text ;
+            szRequest += textBox.Text;
             textBlock.Text = "Sending request...Please wait";
 
 #if DEBUG
             textBlock.Text = szRequest;
 #endif
 
+            HttpClient Download = new HttpClient();
+            var Response = await Download.GetAsync(new Uri(szRequest));
+            var headers = Response.Headers;
+            var content = Response.Content;
+#if DEBUG
+            textBlock.Text = headers.ToString();
+#endif
+            Download.Dispose();
         }
     }
 }
