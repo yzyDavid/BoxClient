@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Web.Http;
+using System.Diagnostics;
 
 
 //“空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 上有介绍
@@ -52,7 +53,8 @@ namespace BoxClient
             var headers = Response.Headers;
             var content = Response.Content;
 #if DEBUG
-            textBlock.Text = headers.ToString();
+            Debug.WriteLine(headers);
+            textBlock.Text = content.Headers.ToString();
 #endif
             Download.Dispose();
         }
