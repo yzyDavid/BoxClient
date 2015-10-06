@@ -1,7 +1,4 @@
-﻿//DEBUG symbol is not defined in the Property,define it below if it should be used
-#define DEBUG
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,7 +15,6 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Web.Http;
 using System.Diagnostics;
-
 
 //“空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 上有介绍
 
@@ -42,7 +38,7 @@ namespace BoxClient
             string szRequest;
             szRequest = "Https://box.zjuqsc.com/item/get/";
             szRequest += textBox.Text;
-            textBlock.Text = "Sending request...Please wait";
+            textBlock.Text = "Sending request...\r\nPlease wait";
 
 #if DEBUG
             textBlock.Text = szRequest;
@@ -52,8 +48,17 @@ namespace BoxClient
             var Response = await Download.GetAsync(new Uri(szRequest));
             var headers = Response.Headers;
             var content = Response.Content;
+            Debug.WriteLine(Response.StatusCode);
+            if((HttpStatusCode)404==Response.StatusCode)
+            {
+                textBlock.Text = "Error occurred...\r\nCheck your Code\r\nor try again";
+                return;
+            }
+            textBlock.Text = "Response Got,Saving File";
+            string filename = null;
+            //FileStream fs = new FileStream(filename, FileMode.CreateNew);
 #if DEBUG
-            Debug.WriteLine(headers);
+            Debug.WriteLine(content.Headers);
             textBlock.Text = content.Headers.ToString();
 #endif
             Download.Dispose();
