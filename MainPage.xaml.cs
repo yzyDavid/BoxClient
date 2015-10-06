@@ -79,8 +79,9 @@ namespace BoxClient
             try
             {
                 FileStream fs = new FileStream(filename, FileMode.CreateNew);
+                Debug.WriteLine(fs.Name);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
             }
