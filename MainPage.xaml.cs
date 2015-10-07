@@ -16,11 +16,12 @@ using Windows.UI.Xaml.Navigation;
 using Windows.Web.Http;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
+using Windows.Storage.Pickers;
 
 //“空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 上有介绍
 
 /*************************
-*** A sample of content
+*** A sample of content header
 **************************
 
 Ok
@@ -61,7 +62,17 @@ namespace BoxClient
 #endif
 
             HttpClient Download = new HttpClient();
-            var Response = await Download.GetAsync(new Uri(szRequest));
+            HttpResponseMessage Response;
+            try
+            {
+                Response = await Download.GetAsync(new Uri(szRequest));
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.GetType());
+                textBlock.Text = "Connection Error\r\nPlaese check your network";
+                return;
+            }
             var headers = Response.Headers;
             var content = Response.Content;
             Debug.WriteLine(Response.StatusCode);
@@ -76,15 +87,20 @@ namespace BoxClient
             string filename = null;
             filename = mat.Groups[0].Value;
             Debug.WriteLine(filename);
-            try
-            {
-                FileStream fs = new FileStream(filename, FileMode.CreateNew);
-                Debug.WriteLine(fs.Name);
-            }
-            catch (Exception ex)
-            {
 
+            FileSavePicker picker = new FileSavePicker();
+            picker.SuggestedFileName = filename;
+            picker.SuggestedStartLocation = PickerLocationId.Downloads;
+            picker.FileTypeChoices.Add("Any File Type", new List<string>() { "." });
+            var file = await picker.PickSaveFileAsync();
+            if (null != file)
+            {
+                Debug.WriteLine(file.ToString());
             }
+            else
+                textBlock.Text = "Error:\r\nCannot Open the file";
+
+            
 #if DEBUG
             Debug.WriteLine(content.Headers);
             textBlock.Text = content.Headers.ToString();
