@@ -1,0 +1,1 @@
+MainPackage=F:\VSProjects\BoxClient\BoxClient\bin\ARM\Debug\BoxClient_1.0.0.0_ARM_Debug.appx

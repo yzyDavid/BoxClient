@@ -8,9 +8,30 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="0" Margin="10,213,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="340" AcceptsReturn="True"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Enter Box ID to download below:" VerticalAlignment="Top" Height="80" Width="181" Margin="10,133,0,0"/>
-        <Button x:Name="Click_Me" Content="Click Me!" HorizontalAlignment="Left" Height="56" Margin="10,304,0,0" VerticalAlignment="Top" Width="236" Click="Click_Me_Click"/>
-
+        <TextBox x:Name="Input" 
+                 HorizontalAlignment="Center" 
+                 Height="0" 
+                 Margin="10,270,0,0" 
+                 TextWrapping="Wrap" 
+                 Text="TextBox" 
+                 VerticalAlignment="Top" 
+                 Width="340" 
+                 AcceptsReturn="True"/>
+        <TextBlock x:Name="Status" 
+                   HorizontalAlignment="Center" 
+                   TextWrapping="Wrap" 
+                   Text="Enter Box ID to download :" 
+                   VerticalAlignment="Top" 
+                   Height="80" 
+                   Width="140" 
+                   Margin="10,10,0,0"/>
+        <Button x:Name="ClickMe" 
+                Content="Click Me!" 
+                HorizontalAlignment="Center" 
+                Height="30" 
+                Margin="10,300,0,0" 
+                VerticalAlignment="Top" 
+                Width="160" 
+                Click="Click_Me_Click"/>
     </Grid>
 </Page>
