@@ -7,9 +7,12 @@
 *.userosscache
 *.sln.docstates
 
+<<<<<<< HEAD
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+=======
+>>>>>>> d54fa303b7f31c35c1066dc92159cb837d362dd8
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -22,14 +25,23 @@ bld/
 [Bb]in/
 [Oo]bj/
 
+<<<<<<< HEAD
 # Visual Studio 2015 cache/options directory
 .vs/
+=======
+# Roslyn cache directories
+*.ide/
+>>>>>>> d54fa303b7f31c35c1066dc92159cb837d362dd8
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 
+<<<<<<< HEAD
 # NUNIT
+=======
+#NUNIT
+>>>>>>> d54fa303b7f31c35c1066dc92159cb837d362dd8
 *.VisualState.xml
 TestResult.xml
 
@@ -38,10 +50,13 @@ TestResult.xml
 [Rr]eleasePS/
 dlldata.c
 
+<<<<<<< HEAD
 # DNX
 project.lock.json
 artifacts/
 
+=======
+>>>>>>> d54fa303b7f31c35c1066dc92159cb837d362dd8
 *_i.c
 *_p.c
 *_i.h
@@ -94,7 +109,11 @@ _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
 
+<<<<<<< HEAD
 # JustCode is a .NET coding add-in
+=======
+# JustCode is a .NET coding addin-in
+>>>>>>> d54fa303b7f31c35c1066dc92159cb837d362dd8
 .JustCode
 
 # TeamCity is a build add-in
@@ -133,11 +152,17 @@ publish/
 # Publish Web Output
 *.[Pp]ublish.xml
 *.azurePubxml
+<<<<<<< HEAD
 ## TODO: Comment the next line if you want to checkin your
 ## web deploy settings but do note that will include unencrypted
 ## passwords
 #*.pubxml
 
+=======
+# TODO: Comment the next line if you want to checkin your web deploy settings 
+# but database connection strings (with potential passwords) will be unencrypted
+*.pubxml
+>>>>>>> d54fa303b7f31c35c1066dc92159cb837d362dd8
 *.publishproj
 
 # NuGet Packages
@@ -146,7 +171,11 @@ publish/
 **/packages/*
 # except build/, which is used as an MSBuild target.
 !**/packages/build/
+<<<<<<< HEAD
 # Uncomment if necessary however generally it will be regenerated when needed
+=======
+# If using the old MSBuild-Integrated Package Restore, uncomment this:
+>>>>>>> d54fa303b7f31c35c1066dc92159cb837d362dd8
 #!**/packages/repositories.config
 
 # Windows Azure Build Output
@@ -156,6 +185,7 @@ csx/
 # Windows Store app package directory
 AppPackages/
 
+<<<<<<< HEAD
 # Visual Studio cache files
 # files ending in .cache can be ignored
 *.[Cc]ache
@@ -163,6 +193,11 @@ AppPackages/
 !*.[Cc]ache/
 
 # Others
+=======
+# Others
+sql/
+*.Cache
+>>>>>>> d54fa303b7f31c35c1066dc92159cb837d362dd8
 ClientBin/
 [Ss]tyle[Cc]op.*
 ~$*
@@ -172,7 +207,10 @@ ClientBin/
 *.pfx
 *.publishsettings
 node_modules/
+<<<<<<< HEAD
 orleans.codegen.cs
+=======
+>>>>>>> d54fa303b7f31c35c1066dc92159cb837d362dd8
 
 # RIA/Silverlight projects
 Generated_Code/
@@ -197,6 +235,7 @@ UpgradeLog*.htm
 # Microsoft Fakes
 FakesAssemblies/
 
+<<<<<<< HEAD
 # Node.js Tools for Visual Studio
 .ntvs_analysis.dat
 
@@ -210,3 +249,51 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+=======
+# =========================
+# Operating System Files
+# =========================
+
+# OSX
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+# =========================
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+>>>>>>> d54fa303b7f31c35c1066dc92159cb837d362dd8
